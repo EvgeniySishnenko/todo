@@ -1,120 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/vuetify@1.5.24/dist/vuetify.min.css"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+      name="description"
+      content="Web site created using create-react-app"
     />
-    <style>
-      .done {
-        text-decoration: line-through;
-      }
-      [v-cloak] {
-        display: none;
-      }
-    </style>
-    <title>Задачи</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
   </head>
   <body>
-    <div id="app" v-cloak>
-      <v-app :dark="isDark">
-        <v-toolbar color="blue darken-4" dark>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-toolbar-title class="headline">Список дел</v-toolbar-title>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-          <v-spacer></v-spacer>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn icon @click="show = !show" v-on="on">
-                <v-icon v-model="isDark" @click="isDark = !isDark"
-                  >{{ show ? 'check_circle' : 'check_circle_outline' }}
-                </v-icon>
-              </v-btn>
-            </template>
-            <span>{{isDark ? 'Светлая тема' : 'Темная тема'}}</span>
-          </v-tooltip>
-        </v-toolbar>
-        <v-container>
-          <v-layout row justify-center>
-            <v-flex xs12>
-              <v-card>
-                <v-list two-line subheader>
-                  <v-container>
-                    <v-subheader class="headline">
-                      {{new Date() | date}}
-                    </v-subheader>
-                    <v-spacer></v-spacer>
-
-                    <p class="text-xs-right"><b>{{todos.length}}</b> Задач</p>
-
-                    <v-flex xs12>
-                      <v-text-field
-                        clearable
-                        v-model="todoTitle"
-                        id="newTodo"
-                        name="newTodo"
-                        label="Введите название задачи"
-                        @keyup.enter="addTodo"
-                        :dark="isDark"
-                      >
-                      </v-text-field>
-                    </v-flex>
-                  </v-container>
-                  <v-subheader class="subheading" v-if="todos.length === 0">
-                    У вас 0 задач, добавьте новую
-                  </v-subheader>
-                  <v-subheader class="subheading" v-else>
-                    Ваши задачи
-                  </v-subheader>
-                  <div v-for="(todo, i) in todos" :key="i">
-                    <v-list-tile avatar>
-                      <v-list-tile-action>
-                        <v-checkbox
-                          v-if="!todo.done"
-                          v-model="todo.done"
-                          @change="completeTodo(todo.id)"
-                          :dark="isDark"
-                        ></v-checkbox>
-                      </v-list-tile-action>
-                      <v-list-tile-content>
-                        <v-list-tile-title :class="{done: todo.done}">
-                          {{todo.title | capitalize}}
-                        </v-list-tile-title>
-                        <v-list-tile-sub-title>
-                          Добавлено в: {{todo.createdAt | date(true)}} (
-                          изменено {{todo.updatedAt | date(true)}} )
-                        </v-list-tile-sub-title>
-                      </v-list-tile-content>
-                      <v-btn
-                        icon
-                        ripple
-                        color="red"
-                        @click="removeTodo(todo.id)"
-                      >
-                        <v-icon class="white--text">close</v-icon>
-                      </v-btn>
-                    </v-list-tile>
-                  </div>
-                </v-list>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-app>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@1.5.24/dist/vuetify.js"></script>
-    <script src="/script/app.js"></script>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
