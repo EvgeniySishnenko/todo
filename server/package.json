@@ -4,18 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "prestart": "npm install",
+    "start": "forever index.js",
+    "watch": "forever -w index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "forever": "^4.0.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
