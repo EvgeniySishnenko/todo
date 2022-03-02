@@ -3,7 +3,7 @@ const todoRoutes = require("./routes/todo");
 const sequelize = require("./utils/database");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 app.use(express.json());
 app.use("/api/todo", todoRoutes);
