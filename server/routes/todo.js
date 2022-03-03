@@ -22,6 +22,7 @@ router.post("/", async (req, res) => {
       title: req.body.title,
       done: false,
     });
+
     res.status(201).json({ todo });
   } catch (error) {
     console.log(error);
