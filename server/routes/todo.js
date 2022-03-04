@@ -6,6 +6,7 @@ const router = Router();
 router.get("/", async (req, res) => {
   try {
     const todos = await Todo.findAll();
+    console.log(todos);
     res.status(201).json({ todos });
   } catch (error) {
     console.log(error);
@@ -22,7 +23,6 @@ router.post("/", async (req, res) => {
       title: req.body.title,
       done: false,
     });
-
     res.status(201).json({ todo });
   } catch (error) {
     console.log(error);

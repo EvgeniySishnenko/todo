@@ -6,5 +6,5 @@ const fetchHeaders = () => ({
 
 export const fetchApp: AxiosInstance = axios.create({
   headers: fetchHeaders(),
-  baseURL: `http://localhost:8000/api/todo`,
+  baseURL: `http://localhost:9000/api/todo`,
 });
