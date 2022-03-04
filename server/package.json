@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "forever index.js",
-    "watch": "forever -w index.js"
+    "start": "nodemon index.js",
+    "watch": "nodemon -w index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
     "sequelize": "^6.16.2"
   }
 }

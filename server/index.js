@@ -1,9 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const todoRoutes = require("./routes/todo");
 const sequelize = require("./utils/database");
-// const cors = require("cors");
+const cors = require("cors");
 const app = express();
-const PORT = process.env.PORT || 8080;
+
+const PORT = process.env.PORT || 9000;
+
+app.use(cors());
+
 app.use(express.json());
 app.use("/api/todo", todoRoutes);
 
