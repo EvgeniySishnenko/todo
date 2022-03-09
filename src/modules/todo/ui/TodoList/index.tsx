@@ -11,7 +11,7 @@ import { deleteTodo, updateTodo } from "../../reducer/actions";
 import { useAppDispatch } from "../../../../core/hooks/redux";
 import { useStyles } from "./elements";
 
-export const CardTodoItem: FC = () => {
+export const TodoList: FC = () => {
   const todos = useSelector(getTodosSelectors);
   const dispatch = useAppDispatch();
   const classes = useStyles();
